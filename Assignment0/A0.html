@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<HTML lang = "en">
+<HEAD>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Assignment 0</title>
+  
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  
+<style>
+pre.hljl {
+    border: 1px solid #ccc;
+    margin: 5px;
+    padding: 5px;
+    overflow-x: auto;
+    color: rgb(68,68,68); background-color: rgb(251,251,251); }
+pre.hljl > span.hljl-t { }
+pre.hljl > span.hljl-w { }
+pre.hljl > span.hljl-e { }
+pre.hljl > span.hljl-eB { }
+pre.hljl > span.hljl-o { }
+pre.hljl > span.hljl-k { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kc { color: rgb(59,151,46); font-style: italic; }
+pre.hljl > span.hljl-kd { color: rgb(214,102,97); font-style: italic; }
+pre.hljl > span.hljl-kn { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kp { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kr { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-kt { color: rgb(148,91,176); font-weight: bold; }
+pre.hljl > span.hljl-n { }
+pre.hljl > span.hljl-na { }
+pre.hljl > span.hljl-nb { }
+pre.hljl > span.hljl-nbp { }
+pre.hljl > span.hljl-nc { }
+pre.hljl > span.hljl-ncB { }
+pre.hljl > span.hljl-nd { color: rgb(214,102,97); }
+pre.hljl > span.hljl-ne { }
+pre.hljl > span.hljl-neB { }
+pre.hljl > span.hljl-nf { color: rgb(66,102,213); }
+pre.hljl > span.hljl-nfm { color: rgb(66,102,213); }
+pre.hljl > span.hljl-np { }
+pre.hljl > span.hljl-nl { }
+pre.hljl > span.hljl-nn { }
+pre.hljl > span.hljl-no { }
+pre.hljl > span.hljl-nt { }
+pre.hljl > span.hljl-nv { }
+pre.hljl > span.hljl-nvc { }
+pre.hljl > span.hljl-nvg { }
+pre.hljl > span.hljl-nvi { }
+pre.hljl > span.hljl-nvm { }
+pre.hljl > span.hljl-l { }
+pre.hljl > span.hljl-ld { color: rgb(148,91,176); font-style: italic; }
+pre.hljl > span.hljl-s { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sa { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sb { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sc { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sd { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sdB { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sdC { color: rgb(201,61,57); }
+pre.hljl > span.hljl-se { color: rgb(59,151,46); }
+pre.hljl > span.hljl-sh { color: rgb(201,61,57); }
+pre.hljl > span.hljl-si { }
+pre.hljl > span.hljl-so { color: rgb(201,61,57); }
+pre.hljl > span.hljl-sr { color: rgb(201,61,57); }
+pre.hljl > span.hljl-ss { color: rgb(201,61,57); }
+pre.hljl > span.hljl-ssB { color: rgb(201,61,57); }
+pre.hljl > span.hljl-nB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nbB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nfB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nh { color: rgb(59,151,46); }
+pre.hljl > span.hljl-ni { color: rgb(59,151,46); }
+pre.hljl > span.hljl-nil { color: rgb(59,151,46); }
+pre.hljl > span.hljl-noB { color: rgb(59,151,46); }
+pre.hljl > span.hljl-oB { color: rgb(102,102,102); font-weight: bold; }
+pre.hljl > span.hljl-ow { color: rgb(102,102,102); font-weight: bold; }
+pre.hljl > span.hljl-p { }
+pre.hljl > span.hljl-c { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-ch { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cm { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cp { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cpB { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-cs { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-csB { color: rgb(153,153,119); font-style: italic; }
+pre.hljl > span.hljl-g { }
+pre.hljl > span.hljl-gd { }
+pre.hljl > span.hljl-ge { }
+pre.hljl > span.hljl-geB { }
+pre.hljl > span.hljl-gh { }
+pre.hljl > span.hljl-gi { }
+pre.hljl > span.hljl-go { }
+pre.hljl > span.hljl-gp { }
+pre.hljl > span.hljl-gs { }
+pre.hljl > span.hljl-gsB { }
+pre.hljl > span.hljl-gt { }
+</style>
+
+
+
+  <style type="text/css">
+  @font-face {
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+}
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  font-family: monospace, monospace;
+  font-size : 0.8em;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+thead th {
+    border-bottom: 1px solid black;
+    background-color: white;
+}
+tr:nth-child(odd){
+  background-color: rgb(248,248,248);
+}
+
+
+/*
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 12/29/2014
+*/
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0; }
+}
+@media (min-width: 550px) {
+  .container {
+    width: 80%; }
+  .column,
+  .columns {
+    margin-left: 4%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+  .one-third.column               { width: 30.6666666667%; }
+  .two-thirds.column              { width: 65.3333333333%; }
+
+  .one-half.column                { width: 48%; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-two.column,
+  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-three.column,
+  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-four.column,
+  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-five.column,
+  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-six.column,
+  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-seven.column,
+  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-ten.column,
+  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns     { margin-left: 52%; }
+
+}
+html {
+  font-size: 62.5%; }
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; }
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300; }
+h1 { font-size: 3.6rem; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 3.4rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 3.2rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.8rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 2.4rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+
+p {
+  margin-top: 0; }
+a {
+  color: #1EAEDB; }
+a:hover {
+  color: #0FA0CE; }
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #333;
+  border-color: #888;
+  outline: 0; }
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: #FFF;
+  background-color: #33C3F0;
+  border-color: #33C3F0; }
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: #FFF;
+  background-color: #1EAEDB;
+  border-color: #1EAEDB; }
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; }
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #33C3F0;
+  outline: 0; }
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600; }
+fieldset {
+  padding: 0;
+  border-width: 0; }
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+label > .label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal; }
+ul {
+  list-style: circle; }
+ol {
+  list-style: decimal; }
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%; }
+li > p {margin : 0;}
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
+button,
+.button {
+  margin-bottom: 1rem; }
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem; }
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 1.0rem; }
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+.u-pull-right {
+  float: right; }
+.u-pull-left {
+  float: left; }
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #E1E1E1; }
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre.hljl {
+  margin: 0 0 10px;
+  display: block;
+  background: #f5f5f5;
+  border-radius: 4px;
+  padding : 5px;
+}
+
+pre.output {
+  background: #ffffff;
+}
+
+pre.code {
+  background: #ffffff;
+}
+
+pre.julia-error {
+  color : red
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 13px;
+}
+
+
+@media (min-width: 400px) {}
+@media (min-width: 550px) {}
+@media (min-width: 750px) {}
+@media (min-width: 1000px) {}
+@media (min-width: 1200px) {}
+
+h1.title {margin-top : 20px}
+img {max-width : 100%}
+div.title {text-align: center;}
+
+  </style>
+
+
+
+</HEAD>
+  <BODY>
+    <div class ="container">
+      <div class = "row">
+        <div class = "col-md-12 twelve columns">
+
+          <div class="title">
+            <h1 class="title">Assignment 0</h1>
+            <h5>Jiaqi Sun (#998181747)</h5>
+            
+          </div>
+
+          <h1>Probability</h1>
+<h2>Variance and Covariance</h2>
+<p>Let <span class="math">$X$</span> and <span class="math">$Y$</span> be two continuous, independent random variables.</p>
+<ol>
+<li><p>&#91;3pts&#93; Starting from the definition of independence, show that the independence of <span class="math">$X$</span> and <span class="math">$Y$</span> implies that their covariance is <span class="math">$0$</span>.</p>
+</li>
+</ol>
+<p>Answer: Assuming <span class="math">$X$</span> and <span class="math">$Y$</span> are discrete random variables with probability mass function <span class="math">$P(X,Y)$</span>. By definition, if <span class="math">$X$</span> and <span class="math">$Y$</span> are independent, then <span class="math">$\mathbb{P}(X,Y) = \mathbb{P}(X) * \mathbb{P}(Y)$</span>. Then,</p>
+<p class="math">\[
+\begin{align}
+\mathbb{E}(XY) &= \sum_{X}\sum_{Y} XY * P(X,Y)\\
+&=\sum_{X}\sum_{Y} XY * P(X)P(Y)\\
+&=\sum_{X} XP(X) * \sum_{Y} YP(Y)\\
+&=\mathbb{E}(X) * \mathbb{E}(Y)
+\end{align}
+\]</p>
+<p>Since, covariance of <span class="math">$X$</span> and <span class="math">$Y$</span> is defined to be <span class="math">$\text{cov}(XY) = \mathbb{E}(XY) - \mathbb{E}(X) * \mathbb{E}(Y)$</span>. Thus, <span class="math">$\text{cov}(XY) = 0$</span>. Similar approach for continuous random varaibles.</p>
+<ol start="2">
+<li><p>&#91;3pts&#93; For a scalar constant <span class="math">$a$</span>, show the following two properties starting from the definition of expectation:</p>
+</li>
+</ol>
+<p class="math">\[
+\begin{align}
+\mathbb{E}(X+aY) &= \mathbb{E}(X) + a\mathbb{E}(Y)\\
+\text{var}(X + aY) &= \text{var}(X) + a^2 \text{var}(Y)
+\end{align}
+\]</p>
+<p>Answer: Assuming <span class="math">$X$</span> and <span class="math">$Y$</span> are discrete random variables with probability mass function <span class="math">$P(X,Y)$</span>. Expectaion of <span class="math">$X$</span> is defined to be <span class="math">$\mathbb{E}=\sum_{X} XP(X)$</span>. Thus,</p>
+<p class="math">\[
+\begin{align}
+\mathbb{E}(X+aY) &= \sum_{X}\sum_{Y} (X+aY)P(X,Y)\\
+&= \sum_{X}\sum_{Y} (XP(X,Y) + aYP(X,Y))\\
+&= \sum_{X}\sum_{Y} XP(X,Y) + \sum_{X}\sum_{Y} aYP(X,Y)\\
+&= \sum_{X} XP(X) + \sum_{Y} aYP(Y)\\
+&= \mathbb{E}(X) + a\mathbb{E}(Y)
+\end{align}
+\]</p>
+<p>By definition, variance of <span class="math">$X$</span> is <span class="math">$\text{var}(X) = \mathbb{E}(X - \mathbb{E}(X))^2 = \mathbb{E}(X^2) - (\mathbb{E}(X))^2$</span>. Assuming <span class="math">$X$</span> and <span class="math">$Y$</span> are independent, i.e. <span class="math">$\text{cov}(XY) = \mathbb{E}(XY) - \mathbb{E}(X) * \mathbb{E}(Y) = 0$</span>. Thus,</p>
+<p class="math">\[
+\begin{align}
+\text{var}(X + aY) &= \mathbb{E}((X + aY)^2) - (\mathbb{E}(X + aY))^2\\
+&= \mathbb{E}(X^2 + 2aXY + a^2Y^2) - (\mathbb{E}(X)^2 + 2a\mathbb{E}(X)\mathbb{E}(Y) + a^2\mathbb{E}(Y)^2)\\
+&= [\mathbb{E}(X^2) - (\mathbb{E}(X))^2] + a^2[\mathbb{E}(Y^2) - (\mathbb{E}(Y))^2] + 2a(\mathbb{E}(XY) - \mathbb{E}(X)\mathbb{E}(Y))\\
+&= \text{var}(X) + a^2 \text{var}(Y)
+\end{align}
+\]</p>
+<p>Similar approach for continuous random varaibles.</p>
+<h2>1D Gaussian Densities</h2>
+<ol>
+<li><p>&#91;1pts&#93; Can a probability density function &#40;pdf&#41; ever take values greater than <span class="math">$1$</span>?</p>
+</li>
+</ol>
+<p>Answer: Yes. It is possible that pdf is greater than <span class="math">$1$</span>, e.g. <span class="math">$f(x) = e^x$</span>. If <span class="math">$f(x)$</span> is a probability density function &#40;pdf&#41; of a continuous random variable <span class="math">$X$</span>, then it satisfies following conditions:</p>
+<ul>
+<li><p><span class="math">$f(x) > 0\quad  \forall x$</span>.</p>
+</li>
+<li><p><span class="math">$\int_{-\infty}^{\infty} f(x) dx = 1$</span>.</p>
+</li>
+</ul>
+<p>Thus, <span class="math">$f(x)$</span> can be greater then <span class="math">$1$</span> as long as it is intergrated to be 1 over defined interval.</p>
+<ol start="2">
+<li><p>Let <span class="math">$X$</span> be a univariate random variable distributed according to a Gaussian distribution with mean <span class="math">$\mu$</span> and variance <span class="math">$\sigma^2$</span>.</p>
+</li>
+</ol>
+<ul>
+<li><p>&#91;&#91;1pts&#93;&#93; Write the expression for the pdf:</p>
+</li>
+</ul>
+<p>Answer: Let <span class="math">$X$</span> be a random variable following a Gaussian distribution with mean <span class="math">$\mu$</span> and variance <span class="math">$\sigma^2$</span>. Its pdf writes as</p>
+<p class="math">\[
+\begin{align}
+f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{- \frac{(x - \mu)^2}{2\sigma ^2}}
+\end{align}
+\]</p>
+<ul>
+<li><p>&#91;&#91;2pts&#93;&#93; Write the code for the function that computes the pdf at <span class="math">$x$</span> with default values <span class="math">$\mu=0$</span> and <span class="math">$\sigma = \sqrt{0.01}$</span>:</p>
+</li>
+</ul>
+<p>Answer:</p>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>gaussian_pdf</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>;</span><span class='hljl-t'> </span><span class='hljl-n'>mean</span><span class='hljl-oB'>=</span><span class='hljl-nfB'>0.</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>variance</span><span class='hljl-oB'>=</span><span class='hljl-nfB'>0.01</span><span class='hljl-p'>)</span><span class='hljl-t'>
+      </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-ni'>1</span><span class='hljl-oB'>/</span><span class='hljl-nf'>sqrt</span><span class='hljl-p'>(</span><span class='hljl-ni'>2</span><span class='hljl-oB'>*</span><span class='hljl-n'>pi</span><span class='hljl-oB'>*</span><span class='hljl-n'>variance</span><span class='hljl-p'>))</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-nf'>exp</span><span class='hljl-p'>((</span><span class='hljl-oB'>-</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-oB'>-</span><span class='hljl-n'>mean</span><span class='hljl-p'>)</span><span class='hljl-oB'>^</span><span class='hljl-ni'>2</span><span class='hljl-p'>)</span><span class='hljl-oB'>/</span><span class='hljl-p'>(</span><span class='hljl-ni'>2</span><span class='hljl-oB'>*</span><span class='hljl-n'>variance</span><span class='hljl-p'>))</span><span class='hljl-t'>
+      </span><span class='hljl-cs'># implement pdf at x</span><span class='hljl-t'>
+    </span><span class='hljl-k'>end</span>
+</pre>
+
+
+<pre class="output">
+gaussian_pdf &#40;generic function with 1 method&#41;
+</pre>
+
+
+<p>Test your implementation against a standard implementation from a library:</p>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Test</span><span class='hljl-t'>
+    </span><span class='hljl-cs'># Test answers</span><span class='hljl-t'>
+    </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Distributions</span><span class='hljl-oB'>:</span><span class='hljl-t'> </span><span class='hljl-n'>pdf</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>Normal</span><span class='hljl-t'> </span><span class='hljl-cs'># Note Normal uses N(mean, stddev) for parameters</span><span class='hljl-t'>
+    </span><span class='hljl-nd'>@testset</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;Implementation of Gaussian pdf&quot;</span><span class='hljl-t'> </span><span class='hljl-k'>begin</span><span class='hljl-t'>
+      </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>randn</span><span class='hljl-p'>()</span><span class='hljl-t'>
+      </span><span class='hljl-nd'>@test</span><span class='hljl-t'> </span><span class='hljl-nf'>gaussian_pdf</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>≈</span><span class='hljl-t'> </span><span class='hljl-n'>pdf</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-nf'>Normal</span><span class='hljl-p'>(</span><span class='hljl-nfB'>0.</span><span class='hljl-p'>,</span><span class='hljl-nf'>sqrt</span><span class='hljl-p'>(</span><span class='hljl-nfB'>0.01</span><span class='hljl-p'>)),</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'>
+      </span><span class='hljl-cs'># ≈ is syntax sugar for isapprox, typed with `\approx &lt;TAB&gt;`</span><span class='hljl-t'>
+      </span><span class='hljl-cs'># or use the full function, like below</span><span class='hljl-t'>
+      </span><span class='hljl-nd'>@test</span><span class='hljl-t'> </span><span class='hljl-nf'>isapprox</span><span class='hljl-p'>(</span><span class='hljl-nf'>gaussian_pdf</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>,</span><span class='hljl-n'>mean</span><span class='hljl-oB'>=</span><span class='hljl-nfB'>10.</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>variance</span><span class='hljl-oB'>=</span><span class='hljl-ni'>1</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>pdf</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-nf'>Normal</span><span class='hljl-p'>(</span><span class='hljl-nfB'>10.</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-nf'>sqrt</span><span class='hljl-p'>(</span><span class='hljl-ni'>1</span><span class='hljl-p'>)),</span><span class='hljl-n'>x</span><span class='hljl-p'>))</span><span class='hljl-t'>
+    </span><span class='hljl-k'>end</span><span class='hljl-p'>;</span>
+</pre>
+
+
+<pre class="output">
+Test Summary:                  | Pass  Total
+Implementation of Gaussian pdf |    2      2
+</pre>
+
+
+<ol start="3">
+<li><p>&#91;1pts&#93; What is the value of the pdf at <span class="math">$x=0$</span>? What is probability that <span class="math">$x=0$</span> &#40;hint: is this the same as the pdf? Briefly explain your answer.&#41;</p>
+</li>
+</ol>
+<p>Answer: pdf at <span class="math">$x=0$</span> is 0, while probability that <span class="math">$x=0$</span> could be any valune in <span class="math">$[0,1]$</span>. The reason is that pdf is for continuous random variables. To calculate the probability of a continuous random variable <span class="math">$X$</span> falling in certain intervals, we need to take a intergral over the intervals. Thus, if pdf taking on any particular value instead of a range, it will have inifinite number of possible values to begin with. To ensure the sum of all the possibilities is 1, the pdf has to be 0. Probability, on the other hand, is more for discrete random variable, working similar as probability mass function &#40;pmf&#41; where we can clearly identify the chance of certain event happens.</p>
+<ol start="4">
+<li><p>A Gaussian with mean <span class="math">$\mu$</span> and variance <span class="math">$\sigma^2$</span> can be written as a simple transformation of the standard Gaussian with mean <span class="math">$0.$</span> and variance <span class="math">$1.$</span>.</p>
+</li>
+</ol>
+<ul>
+<li><p>&#91;&#91;1pts&#93;&#93; Write the transformation that takes <span class="math">$x \sim \mathcal{N}(0.,1.)$</span> to <span class="math">$z \sim \mathcal{N}(\mu, \sigma^2)$</span>:</p>
+</li>
+</ul>
+<p>Answer: Let <span class="math">$X$</span> be a continuous random variable following a standard Gaussian distribution with <span class="math">$\mu = 0.$</span> and <span class="math">$\sigma = 1.$</span>. Let <span class="math">$Z$</span> be a continuous random variable, where <span class="math">$Z = \mu + \sigma X$</span>. And, <span class="math">$Z$</span> is also normally distributed with mean μ and variance <span class="math">$\sigma^2$</span>.</p>
+<ul>
+<li><p>&#91;&#91;2pts&#93;&#93; Write a code implementation to produce <span class="math">$n$</span> independent samples from <span class="math">$\mathcal{N}(\mu, \sigma^2)$</span> by transforming <span class="math">$n$</span> samples from <span class="math">$\mathcal{N}(0.,1.)$</span>.</p>
+</li>
+</ul>
+<p>Answer:</p>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>sample_gaussian</span><span class='hljl-p'>(</span><span class='hljl-n'>n</span><span class='hljl-p'>;</span><span class='hljl-t'> </span><span class='hljl-n'>mean</span><span class='hljl-oB'>=</span><span class='hljl-nfB'>0.</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>variance</span><span class='hljl-oB'>=</span><span class='hljl-nfB'>0.01</span><span class='hljl-p'>)</span><span class='hljl-t'>
+      </span><span class='hljl-cs'># n samples from standard gaussian</span><span class='hljl-t'>
+      </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>randn</span><span class='hljl-p'>(</span><span class='hljl-n'>n</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+      </span><span class='hljl-cs'># transform x to sample z from N(mean,variance)</span><span class='hljl-t'>
+      </span><span class='hljl-n'>z</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>mean</span><span class='hljl-t'> </span><span class='hljl-oB'>.+</span><span class='hljl-t'> </span><span class='hljl-nf'>sqrt</span><span class='hljl-p'>(</span><span class='hljl-n'>variance</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>.*</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'>
+      </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>z</span><span class='hljl-t'>
+    </span><span class='hljl-k'>end</span><span class='hljl-p'>;</span>
+</pre>
+
+
+
+<p>&#91;2pts&#93; Test your implementation by computing statistics on the samples:</p>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Test</span><span class='hljl-t'>
+    </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Statistics</span><span class='hljl-oB'>:</span><span class='hljl-t'> </span><span class='hljl-n'>mean</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>var</span><span class='hljl-t'>
+    </span><span class='hljl-nd'>@testset</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;Numerically testing Gaussian Sample Statistics&quot;</span><span class='hljl-t'> </span><span class='hljl-k'>begin</span><span class='hljl-t'>
+      </span><span class='hljl-cs'>#TODO: Sample 100000 samples with your function and use mean and var to</span><span class='hljl-t'>
+      </span><span class='hljl-cs'># compute statistics.</span><span class='hljl-t'>
+      </span><span class='hljl-cs'># tests should compare statistics against the true mean and variance from arguments.</span><span class='hljl-t'>
+      </span><span class='hljl-cs'># hint: use isapprox with keyword argument atol=1e-2</span><span class='hljl-t'>
+      </span><span class='hljl-n'>n</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>100000</span><span class='hljl-t'>
+      </span><span class='hljl-nd'>@test</span><span class='hljl-t'> </span><span class='hljl-nf'>isapprox</span><span class='hljl-p'>(</span><span class='hljl-nf'>mean</span><span class='hljl-p'>(</span><span class='hljl-nf'>sample_gaussian</span><span class='hljl-p'>(</span><span class='hljl-n'>n</span><span class='hljl-p'>,</span><span class='hljl-n'>mean</span><span class='hljl-oB'>=</span><span class='hljl-nfB'>10.</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>variance</span><span class='hljl-oB'>=</span><span class='hljl-ni'>1</span><span class='hljl-p'>))</span><span class='hljl-t'> </span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-ni'>10</span><span class='hljl-t'> </span><span class='hljl-p'>,</span><span class='hljl-n'>atol</span><span class='hljl-oB'>=</span><span class='hljl-nfB'>1e-2</span><span class='hljl-p'>)</span><span class='hljl-t'>
+      </span><span class='hljl-nd'>@test</span><span class='hljl-t'> </span><span class='hljl-nf'>isapprox</span><span class='hljl-p'>(</span><span class='hljl-nf'>var</span><span class='hljl-p'>(</span><span class='hljl-nf'>sample_gaussian</span><span class='hljl-p'>(</span><span class='hljl-n'>n</span><span class='hljl-p'>,</span><span class='hljl-n'>mean</span><span class='hljl-oB'>=</span><span class='hljl-nfB'>10.</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>variance</span><span class='hljl-oB'>=</span><span class='hljl-ni'>1</span><span class='hljl-p'>))</span><span class='hljl-t'> </span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-ni'>1</span><span class='hljl-t'> </span><span class='hljl-p'>,</span><span class='hljl-n'>atol</span><span class='hljl-oB'>=</span><span class='hljl-nfB'>1e-2</span><span class='hljl-p'>)</span><span class='hljl-t'>
+
+    </span><span class='hljl-k'>end</span><span class='hljl-p'>;</span>
+</pre>
+
+
+<pre class="output">
+Test Summary:                                  | Pass  Total
+Numerically testing Gaussian Sample Statistics |    2      2
+</pre>
+
+
+<ol start="5">
+<li><p>&#91;3pts&#93; Sample <span class="math">$10000$</span> samples from a Gaussian with mean <span class="math">$10.$</span> an variance <span class="math">$2$</span>. Plot the <strong>normalized</strong> <code>histogram</code> of these samples. On the same axes <code>plot&#33;</code> the pdf of this distribution.</p>
+</li>
+</ol>
+<p>Confirm that the histogram approximates the pdf. &#40;Note: with <code>Plots.jl</code> the function <code>plot&#33;</code> will add to the existing axes.&#41;</p>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Plots</span><span class='hljl-t'>
+    </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Distributions</span><span class='hljl-t'>
+    </span><span class='hljl-n'>n</span><span class='hljl-oB'>=</span><span class='hljl-ni'>10000</span><span class='hljl-t'>
+    </span><span class='hljl-n'>mu</span><span class='hljl-oB'>=</span><span class='hljl-ni'>10</span><span class='hljl-t'>
+    </span><span class='hljl-n'>sigma2</span><span class='hljl-oB'>=</span><span class='hljl-ni'>2</span><span class='hljl-t'>
+    </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-n'>mu</span><span class='hljl-t'> </span><span class='hljl-oB'>.+</span><span class='hljl-t'> </span><span class='hljl-nf'>sqrt</span><span class='hljl-p'>(</span><span class='hljl-n'>sigma2</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>.*</span><span class='hljl-t'> </span><span class='hljl-nf'>randn</span><span class='hljl-p'>(</span><span class='hljl-n'>n</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>nd</span><span class='hljl-oB'>=</span><span class='hljl-nf'>Normal</span><span class='hljl-p'>(</span><span class='hljl-n'>mu</span><span class='hljl-p'>,</span><span class='hljl-n'>sigma2</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-cs'>#histogram</span><span class='hljl-t'>
+    </span><span class='hljl-nf'>histogram</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>,</span><span class='hljl-n'>normalize</span><span class='hljl-oB'>=</span><span class='hljl-kc'>true</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>label</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;normal histogram&quot;</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-cs'>#plot!</span><span class='hljl-t'>
+    </span><span class='hljl-nf'>plot!</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-oB'>-&gt;</span><span class='hljl-n'>pdf</span><span class='hljl-oB'>.</span><span class='hljl-p'>(</span><span class='hljl-n'>nd</span><span class='hljl-p'>,</span><span class='hljl-n'>x</span><span class='hljl-p'>),</span><span class='hljl-t'>
+        </span><span class='hljl-n'>label</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;normal pdf&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'>
+        </span><span class='hljl-n'>xlabel</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;x&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'>
+        </span><span class='hljl-n'>ylabel</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;f(x)&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'>
+        </span><span class='hljl-n'>title</span><span class='hljl-oB'>=</span><span class='hljl-s'>&quot;Histogram of a Gaussian distribution&quot;</span><span class='hljl-p'>)</span>
+</pre>
+
+
+<figure>
+<img src="data:image/png;base64,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"  />
+<figcaption>Figure: Histogram of a Gaussian distribution</figcaption>
+</figure>
+
+<h1>Calculus</h1>
+<h2>Manual Differentiation</h2>
+<p>Let <span class="math">$x,y \in \mathbb{R}^m$</span>, <span class="math">$A \in \mathbb{R}^{m \times n}$</span>, and square matrix <span class="math">$B \in \mathbb{R}^{m \times m}$</span>. And where <span class="math">$x'$</span> is the transpose of <span class="math">$x$</span>. Answer the following questions in vector notation.</p>
+<ol>
+<li><p>&#91;1pts&#93; What is the gradient of <span class="math">$x'y$</span> with respect to <span class="math">$x$</span>?</p>
+</li>
+</ol>
+<p>Answer: <span class="math">$\frac{\partial{(x'y)}}{\partial{x}} = \frac{\partial{(x_{1}y_{1}\ +\ \dots \ + \ x_{m}y_{m})}}{\partial{(x_{1},\ \dots,\ x_{m})}} = y$</span></p>
+<ol start="2">
+<li><p>&#91;1pts&#93; What is the gradient of <span class="math">$x'x$</span> with respect to <span class="math">$x$</span>?</p>
+</li>
+</ol>
+<p>Answer: <span class="math">$\frac{d(x'x)}{\partial{x}} = \frac{d(x_{1}^2\ +\ \dots \ + \ x_{m}^2)}{\partial{(x_{1},\ \dots,\ x_{m})}} = 2x$</span></p>
+<ol start="3">
+<li><p>&#91;2pts&#93; What is the Jacobian of <span class="math">$x'A$</span> with respect to <span class="math">$x$</span>?</p>
+</li>
+</ol>
+<p>Answer: Let <span class="math">$x'$</span> be <span class="math">$[x_{1}\ x_{2}\ \dots \ x_{m}]$</span> a <span class="math">$1 \times m$</span> vector. Let A be a <span class="math">$m \times n$</span> matrix, i.e.</p>
+<p class="math">\[
+\left(\begin{array}{cc}
+a_{11} & a_{12} & \dots & a_{1n} \\
+a_{21} & a_{22} & \dots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \dots & a_{mn}
+\end{array}\right)
+\]</p>
+<p>Thus, <span class="math">$x'A$</span> is</p>
+<p class="math">\[
+\left(\begin{array}{cc}
+a_{11}x_{1}\ +\ \dots \ +\ a_{m1}x_{m} & a_{12}x_{1}\ +\ \dots \ +\ a_{m2}x_{m}\ & \dots & a_{1n}x_{1}\ +\ \dots \ +\ a_{mn}x_{m}
+\end{array}\right)
+\]</p>
+<p>And, Jacobian of <span class="math">$x'A$</span> with respect to <span class="math">$x$</span> can be written a <span class="math">$n \times m$</span> matrix</p>
+<p class="math">\[
+\left(\begin{array}{cc}
+a_{11} & a_{21} & \dots & a_{m1} \\
+a_{12} & a_{22} & \dots & a_{m2} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{1n} & a_{2n} & \dots & a_{mn}
+\end{array}\right)
+\]</p>
+<p>which is <span class="math">$\mathbf{A}'$</span>.</p>
+<ol start="4">
+<li><p>&#91;2pts&#93; What is the gradient of <span class="math">$x'Bx$</span> with respect to <span class="math">$x$</span>?</p>
+</li>
+</ol>
+<p>Answer: Let <span class="math">$y = Bx$</span>, then</p>
+<p class="math">\[
+\begin{align}
+\frac{d(x'Bx)}{d{x}} &= \frac{d(x'y)}{d{x}}\\
+&= \frac{\partial{(x'y)}}{\partial{x}} + \frac{d(y'(x))}{\partial{x}} * \frac{\partial{(x'y)}}{\partial{y}}\\
+&= y + B'x\\
+&= (B + B')x
+\end{align}
+\]</p>
+<h2>Automatic Differentiation &#40;AD&#41;</h2>
+<p>Use one of the accepted AD library &#40;Zygote.jl &#40;julia&#41;, JAX &#40;python&#41;, PyTorch &#40;python&#41;&#41; to implement and test your answers above.</p>
+<h3>&#91;1pts&#93; Create Toy Data</h3>
+
+
+<pre class='hljl'>
+<span class='hljl-cs'># Choose dimensions of toy data</span><span class='hljl-t'>
+    </span><span class='hljl-n'>m</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>5</span><span class='hljl-t'>
+    </span><span class='hljl-n'>n</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-ni'>3</span><span class='hljl-t'>
+
+    </span><span class='hljl-cs'># Make random toy data with correct dimensions</span><span class='hljl-t'>
+    </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>rand</span><span class='hljl-p'>(</span><span class='hljl-n'>m</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>y</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>rand</span><span class='hljl-p'>(</span><span class='hljl-n'>m</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>A</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>rand</span><span class='hljl-p'>(</span><span class='hljl-n'>m</span><span class='hljl-p'>,</span><span class='hljl-n'>n</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-n'>B</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>rand</span><span class='hljl-p'>(</span><span class='hljl-n'>m</span><span class='hljl-p'>,</span><span class='hljl-n'>m</span><span class='hljl-p'>)</span>
+</pre>
+
+
+<pre class="output">
+5×5 Array&#123;Float64,2&#125;:
+ 0.285573  0.398354  0.175978  0.91808    0.879841
+ 0.646116  0.834785  0.133665  0.248992   0.477596
+ 0.137138  0.337151  0.939343  0.0584229  0.329363
+ 0.349777  0.72789   0.526362  0.777223   0.14855 
+ 0.142341  0.489495  0.786542  0.872211   0.724411
+</pre>
+
+
+<p>&#91;1pts&#93; Test to confirm that the sizes of your data is what you expect:</p>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Test</span><span class='hljl-t'>
+    </span><span class='hljl-cs'># Make sure your toy data is the size you expect!</span><span class='hljl-t'>
+    </span><span class='hljl-nd'>@testset</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;Sizes of Toy Data&quot;</span><span class='hljl-t'> </span><span class='hljl-k'>begin</span><span class='hljl-t'>
+      </span><span class='hljl-cs'># confirm sizes for toy data x,y,A,B</span><span class='hljl-t'>
+      </span><span class='hljl-cs'>#hint: use `size` function, which returns tuple of integers.</span><span class='hljl-t'>
+      </span><span class='hljl-nd'>@test</span><span class='hljl-t'> </span><span class='hljl-nf'>size</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>==</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>m</span><span class='hljl-p'>,)</span><span class='hljl-t'>
+      </span><span class='hljl-nd'>@test</span><span class='hljl-t'> </span><span class='hljl-nf'>size</span><span class='hljl-p'>(</span><span class='hljl-n'>y</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>==</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>m</span><span class='hljl-p'>,)</span><span class='hljl-t'>
+      </span><span class='hljl-nd'>@test</span><span class='hljl-t'> </span><span class='hljl-nf'>size</span><span class='hljl-p'>(</span><span class='hljl-n'>A</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>==</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>m</span><span class='hljl-p'>,</span><span class='hljl-n'>n</span><span class='hljl-p'>)</span><span class='hljl-t'>
+      </span><span class='hljl-nd'>@test</span><span class='hljl-t'> </span><span class='hljl-nf'>size</span><span class='hljl-p'>(</span><span class='hljl-n'>B</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>==</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>m</span><span class='hljl-p'>,</span><span class='hljl-n'>m</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-k'>end</span><span class='hljl-p'>;</span>
+</pre>
+
+
+<pre class="output">
+Test Summary:     | Pass  Total
+Sizes of Toy Data |    4      4
+</pre>
+
+
+<h3>Automatic Differentiation</h3>
+<ol>
+<li><p>&#91;1pts&#93; Compute the gradient of <span class="math">$f_1(x) = x'y$</span> with respect to <span class="math">$x$</span>?</p>
+</li>
+</ol>
+
+
+<pre class='hljl'>
+<span class='hljl-cs'># Use AD Tool</span><span class='hljl-t'>
+    </span><span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Zygote</span><span class='hljl-oB'>:</span><span class='hljl-t'> </span><span class='hljl-n'>gradient</span><span class='hljl-t'>
+    </span><span class='hljl-cs'># note: `Zygote.gradient` returns a tuple of gradients, one for each argument.</span><span class='hljl-t'>
+    </span><span class='hljl-cs'># if you want just the first element you will need to index into the tuple with [1]</span><span class='hljl-t'>
+
+    </span><span class='hljl-nf'>f1</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>,</span><span class='hljl-n'>y</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>transpose</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>y</span><span class='hljl-t'>
+    </span><span class='hljl-n'>df1dx</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>gradient</span><span class='hljl-p'>((</span><span class='hljl-n'>x</span><span class='hljl-p'>,</span><span class='hljl-n'>y</span><span class='hljl-p'>)</span><span class='hljl-oB'>-&gt;</span><span class='hljl-nf'>f1</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>,</span><span class='hljl-n'>y</span><span class='hljl-p'>),</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>y</span><span class='hljl-p'>)</span>
+</pre>
+
+
+<pre class="output">
+&#40;&#91;0.06562161050242299, 0.8141196507870387, 0.8691879847418749, 0.0273296425
+75544266, 0.15950460670953426&#93;, &#91;0.3390136789844582, 0.9221707624244988, 0.
+5827867193617926, 0.09462364413318403, 0.7559681878522448&#93;&#41;
+</pre>
+
+
+<ol start="2">
+<li><p>&#91;1pts&#93; Compute the gradient of <span class="math">$f_2(x) = x'x$</span> with respect to <span class="math">$x$</span>?</p>
+</li>
+</ol>
+
+
+<pre class='hljl'>
+<span class='hljl-nf'>f2</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>transpose</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'>
+    </span><span class='hljl-n'>df2dx</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>gradient</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-oB'>-&gt;</span><span class='hljl-nf'>f2</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>),</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-p'>)</span>
+</pre>
+
+
+<pre class="output">
+&#40;&#91;0.6780273579689164, 1.8443415248489976, 1.1655734387235852, 0.18924728826
+636805, 1.5119363757044897&#93;,&#41;
+</pre>
+
+
+<ol start="3">
+<li><p>&#91;1pts&#93; Compute the Jacobian of <span class="math">$f_3(x) = x'A$</span> with respect to <span class="math">$x$</span>?</p>
+</li>
+</ol>
+<p>If you try the usual <code>gradient</code> fucntion to compute the whole Jacobian it would give an error. You can use the following code to compute the Jacobian instead.</p>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>function</span><span class='hljl-t'> </span><span class='hljl-nf'>jacobian</span><span class='hljl-p'>(</span><span class='hljl-n'>f</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'>
+        </span><span class='hljl-n'>y</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>f</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'>
+        </span><span class='hljl-n'>n</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>length</span><span class='hljl-p'>(</span><span class='hljl-n'>y</span><span class='hljl-p'>)</span><span class='hljl-t'>
+        </span><span class='hljl-n'>m</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>length</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'>
+        </span><span class='hljl-n'>T</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>eltype</span><span class='hljl-p'>(</span><span class='hljl-n'>y</span><span class='hljl-p'>)</span><span class='hljl-t'>
+        </span><span class='hljl-n'>j</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>Array</span><span class='hljl-p'>{</span><span class='hljl-n'>T</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-ni'>2</span><span class='hljl-p'>}(</span><span class='hljl-n'>undef</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>n</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>m</span><span class='hljl-p'>)</span><span class='hljl-t'>
+        </span><span class='hljl-k'>for</span><span class='hljl-t'> </span><span class='hljl-n'>i</span><span class='hljl-t'> </span><span class='hljl-kp'>in</span><span class='hljl-t'> </span><span class='hljl-ni'>1</span><span class='hljl-oB'>:</span><span class='hljl-n'>n</span><span class='hljl-t'>
+            </span><span class='hljl-n'>j</span><span class='hljl-p'>[</span><span class='hljl-n'>i</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-oB'>:</span><span class='hljl-p'>]</span><span class='hljl-t'> </span><span class='hljl-oB'>.=</span><span class='hljl-t'> </span><span class='hljl-nf'>gradient</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-oB'>-&gt;</span><span class='hljl-t'> </span><span class='hljl-nf'>f</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)[</span><span class='hljl-n'>i</span><span class='hljl-p'>],</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-p'>)[</span><span class='hljl-ni'>1</span><span class='hljl-p'>]</span><span class='hljl-t'>
+        </span><span class='hljl-k'>end</span><span class='hljl-t'>
+        </span><span class='hljl-k'>return</span><span class='hljl-t'> </span><span class='hljl-n'>j</span><span class='hljl-t'>
+    </span><span class='hljl-k'>end</span><span class='hljl-t'>
+
+    </span><span class='hljl-nf'>f3</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>transpose</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>A</span><span class='hljl-t'>
+    </span><span class='hljl-n'>df3dx</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>jacobian</span><span class='hljl-p'>(</span><span class='hljl-n'>f3</span><span class='hljl-p'>,</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'>
+    </span><span class='hljl-cs'># use jacobian</span>
+</pre>
+
+
+
+<p>&#91;2pts&#93; Briefly, explain why <code>gradient</code> of <span class="math">$f_3$</span> is not well defined &#40;hint: what is the dimensionality of the output?&#41; and what the <code>jacobian</code> function is doing in terms of calls to <code>gradient</code>. Specifically, how many calls of <code>gradient</code> is required to compute a whole <code>jacobian</code> for <span class="math">$f : \mathbb{R}^m \rightarrow \mathbb{R}^n$</span>?</p>
+<p>Answer:</p>
+<p>The very important takeaway here is that, with AD, <code>gradient</code>s are cheap but full <code>jacobian</code>s are expensive.</p>
+<p><code>gradient</code> of <span class="math">$f_3$</span> is not well defined, becase the dimensionality of the output is a <span class="math">$n \times m$</span> matrix, not a scalar. In function <code>jacobian</code>, to calculate <code>gradient</code> of <span class="math">$f_3$</span>, a loop is created to take each term of <span class="math">$f_3$</span> out and calculate <code>gradient</code> with respect to <span class="math">$x$</span> repectively. The resulting array forms the rows of a pre-defined <span class="math">$n \times m$</span> matrix. After the iteration, the Jacobian of <span class="math">$f_3(x) = x'A$</span> with respect to <span class="math">$x$</span> is output. Thus, the number of calls of <code>gradient</code> is equal the dimentions <span class="math">$n$</span> of <span class="math">$f_3$</span>, which is 3 in this case.</p>
+<ol start="4">
+<li><p>&#91;1pts&#93; Compute the gradient of <span class="math">$f_4(x) = x'Bx$</span> with respect to <span class="math">$x$</span>?</p>
+</li>
+</ol>
+
+
+<pre class='hljl'>
+<span class='hljl-nf'>f4</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>transpose</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>B</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'>
+    </span><span class='hljl-n'>df4dx</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-nf'>gradient</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-oB'>-&gt;</span><span class='hljl-nf'>f4</span><span class='hljl-p'>(</span><span class='hljl-n'>x</span><span class='hljl-p'>),</span><span class='hljl-n'>x</span><span class='hljl-p'>)</span>
+</pre>
+
+
+<pre class="output">
+&#40;&#91;2.2319922804492895, 2.9916305530927723, 2.5341195292667225, 2.59022808409
+25416, 3.080542119909926&#93;,&#41;
+</pre>
+
+
+<ol start="5">
+<li><p>&#91;2pts&#93; Test all your implementations against the manually derived derivatives in previous question</p>
+</li>
+</ol>
+
+
+<pre class='hljl'>
+<span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Test</span><span class='hljl-t'>
+    </span><span class='hljl-cs'># Test to confirm that AD matches hand-derived gradients</span><span class='hljl-t'>
+    </span><span class='hljl-nd'>@testset</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;AD matches hand-derived gradients&quot;</span><span class='hljl-t'> </span><span class='hljl-k'>begin</span><span class='hljl-t'>
+      </span><span class='hljl-nd'>@test</span><span class='hljl-t'> </span><span class='hljl-n'>df1dx</span><span class='hljl-p'>[</span><span class='hljl-ni'>1</span><span class='hljl-p'>]</span><span class='hljl-t'> </span><span class='hljl-oB'>==</span><span class='hljl-t'> </span><span class='hljl-n'>y</span><span class='hljl-t'> </span><span class='hljl-cs'># rhs from 2.1</span><span class='hljl-t'>
+      </span><span class='hljl-nd'>@test</span><span class='hljl-t'> </span><span class='hljl-n'>df2dx</span><span class='hljl-p'>[</span><span class='hljl-ni'>1</span><span class='hljl-p'>]</span><span class='hljl-t'> </span><span class='hljl-oB'>==</span><span class='hljl-t'> </span><span class='hljl-ni'>2</span><span class='hljl-t'> </span><span class='hljl-oB'>.*</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-cs'># rhs from 2.1</span><span class='hljl-t'>
+      </span><span class='hljl-nd'>@test</span><span class='hljl-t'> </span><span class='hljl-n'>df3dx</span><span class='hljl-t'> </span><span class='hljl-oB'>==</span><span class='hljl-t'> </span><span class='hljl-nf'>transpose</span><span class='hljl-p'>(</span><span class='hljl-n'>A</span><span class='hljl-p'>)</span><span class='hljl-t'> </span><span class='hljl-cs'># rhs from 2.1</span><span class='hljl-t'>
+      </span><span class='hljl-nd'>@test</span><span class='hljl-t'> </span><span class='hljl-n'>df4dx</span><span class='hljl-p'>[</span><span class='hljl-ni'>1</span><span class='hljl-p'>]</span><span class='hljl-t'> </span><span class='hljl-oB'>≈</span><span class='hljl-t'> </span><span class='hljl-p'>(</span><span class='hljl-n'>B</span><span class='hljl-t'> </span><span class='hljl-oB'>+</span><span class='hljl-t'> </span><span class='hljl-nf'>transpose</span><span class='hljl-p'>(</span><span class='hljl-n'>B</span><span class='hljl-p'>))</span><span class='hljl-t'> </span><span class='hljl-oB'>*</span><span class='hljl-t'> </span><span class='hljl-n'>x</span><span class='hljl-t'> </span><span class='hljl-cs'># rhs from 2.1</span><span class='hljl-t'>
+    </span><span class='hljl-k'>end</span>
+</pre>
+
+
+<pre class="output">
+Test Summary:                     | Pass  Total
+AD matches hand-derived gradients |    4      4
+Test.DefaultTestSet&#40;&quot;AD matches hand-derived gradients&quot;, Any&#91;&#93;, 4, false&#41;
+</pre>
+
+
+
+
+<pre class='hljl'>
+<span class='hljl-k'>using</span><span class='hljl-t'> </span><span class='hljl-n'>Weave</span><span class='hljl-t'>
+</span><span class='hljl-nf'>weave</span><span class='hljl-p'>(</span><span class='hljl-nf'>joinpath</span><span class='hljl-p'>(</span><span class='hljl-nf'>dirname</span><span class='hljl-p'>(</span><span class='hljl-nf'>pwd</span><span class='hljl-p'>()),</span><span class='hljl-s'>&quot;Assignment0&quot;</span><span class='hljl-p'>,</span><span class='hljl-s'>&quot;A0.jmd&quot;</span><span class='hljl-p'>),</span><span class='hljl-t'> </span><span class='hljl-n'>doctype</span><span class='hljl-t'> </span><span class='hljl-oB'>=</span><span class='hljl-t'> </span><span class='hljl-s'>&quot;md2pdf&quot;</span><span class='hljl-p'>,</span><span class='hljl-t'> </span><span class='hljl-n'>out_path</span><span class='hljl-oB'>=:</span><span class='hljl-nf'>pwd</span><span class='hljl-p'>())</span>
+</pre>
+
+
+
+
+          <HR/>
+          <div class="footer"><p>
+          Published from <a href="A0.jmd">A0.jmd</a> using
+          <a href="http://github.com/mpastell/Weave.jl">Weave.jl</a>
+           on 2020-01-14.
+          <p></div>
+
+
+        </div>
+      </div>
+    </div>
+  </BODY>
+</HTML>
